@@ -26,7 +26,7 @@ import sys
 
 net = kicad_netlist_reader.netlist(sys.argv[1])
 
-with open(sys.argv[2], 'wb') as f:
+with open(sys.argv[2], 'w') as f:
     out = csv.writer(f)
     out.writerow(['Comment', 'Designator', 'Footprint', 'LCSC Part #'])
 
