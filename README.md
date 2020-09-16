@@ -4,7 +4,10 @@ Export a JLCPCB Compatible BOM directly from your KiCad schematic!
 
 ## Installation
 
-This script has been tested with KiCad 5.1.4.
+This script requires **Python 3**. If you need a Python 2 version, please get
+[kicad-jlcpcb-bom-plugin version 1.0.0](https://github.com/wokwi/kicad-jlcpcb-bom-plugin/releases/tag/1.0.0) instead.
+
+The script has been tested with KiCad 5.1.4.
 
 1. Copy `bom_csv_jlcpcb.py` to your KiCad installation folder under the `bin/scripting/plugins` directory
 2. In Eschema (the Schematics editor) go to "Tools" -> "Generate Bill of Materials", press the "+" button 
