@@ -20,8 +20,9 @@ Instructions for exporting JLCPCB BOM from KiCad's Eschema:
 
 1. Go to "Tools" -> "Generate Bill of Materials"
 2. Choose "bom_csv_jlcpcb" from the "BOM plugins" list on the left
-3. Make sure the command line ends with "%O.csv" (otherwise, change "%O" into "%O.csv")
-4. Click on "Generate". The BOM file should be created inside your project's directory, as a CSV file.
+3. Make sure the command line starts with "python**3**" instead of "python" (unless your default python version is 3)
+4. Make sure the command line ends with "%O.csv" (otherwise, change "%O" into "%O.csv")
+5. Click on "Generate". The BOM file should be created inside your project's directory, as a CSV file.
 
 ## Custom Fields
 
