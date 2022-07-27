@@ -26,7 +26,7 @@ import sys
 
 net = kicad_netlist_reader.netlist(sys.argv[1])
 
-with open(sys.argv[2], 'w', newline='') as f:
+with open(sys.argv[2], 'w', encoding='utf-8', newline='') as f:
     out = csv.writer(f)
     out.writerow(['Comment', 'Designator', 'Footprint', 'LCSC Part #'])
 
@@ -45,7 +45,11 @@ with open(sys.argv[2], 'w', newline='') as f:
             continue
 
         # Fill in the component groups common data
-        out.writerow([c.getValue() + " " + c.getDescription(), ",".join(refs), c.getFootprint().split(':')[1],
-            lcsc_pn])
+        try:
+            out.writerow([c.getValue() + " " + c.getDescription(), ",".join(refs), c.getFootprint().split(':')[1],
+                lcsc_pn])
+        except:
+            print("write component "+ c.getRef() + " occur error\n")
+            raise
 
     f.close()
