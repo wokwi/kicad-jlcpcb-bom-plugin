@@ -44,8 +44,13 @@ with open(sys.argv[2], 'w', newline='') as f:
         if len(refs) == 0:
             continue
 
+        footprint =  c.getFootprint().split(':')
+        if len(footprint) > 1:
+            footprint = footprint[1]
+        else:
+            footprint = footprint[0]
         # Fill in the component groups common data
-        out.writerow([c.getValue() + " " + c.getDescription(), ",".join(refs), c.getFootprint().split(':')[1],
+        out.writerow([c.getValue() + " " + c.getDescription(), ",".join(refs), footprint,
             lcsc_pn])
 
     f.close()
